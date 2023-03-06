@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import EsignView from '../views/EsignView.vue'
+import EsignPdfView from '../views/EsignPdfView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'esign',
       component: EsignView
+    },
+    {
+      path: '/pdf/:pdfname',
+      name: 'pdfviewer',
+      component: EsignPdfView
     },
     {
       path: '/about',
