@@ -1,12 +1,7 @@
-<script lang="js">
+<script setup>
 import { useUserStore } from '../stores/user'
 
-export default {
-    data() {
-        store: useUserStore()
-    }
-}
-
+const store = useUserStore()
 </script>
 
 <template>
@@ -16,11 +11,11 @@ export default {
             <div class="font-black tracking-tighter text-2xl ml-2">SignPdf</div>
         </div>
 
-        <button v-if="!store?.user?.isSignedin" class="p-3 w-24 rounded-full text-sm font-bold hover:bg-blue-500 text-white bg-blue-600">
+        <button v-if="!store.user.isSignedin" class="p-3 w-24 rounded-full text-sm font-bold hover:bg-blue-500 text-white bg-blue-600">
             login
         </button>
 
-        <div v-if="user?.isSignedin" class="p-2 h-16 w-16 rounded-full bg-gray-200">
+        <div v-if="store.user.isSignedin" class="p-2 h-16 w-16 rounded-full bg-gray-200">
 
         </div>
     </div>
